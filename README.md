@@ -1,9 +1,11 @@
-# TT-BUDA TEST Models
-
 ## Contents
-- [Introduction to PyBuda](#test-models)
-- [Installation TT-BUDA](#test-models)
-- [Tests](#docs)
+- **Introduction to PyBuda**
+- **Installation TT-BUDA**
+  - HugePages Setup
+  - PCI Driver Installation
+  - Backend Compiler Dependencies
+  - PyBuda Installation
+- **Test**
 - [Test Models](#build)
 
 
@@ -11,7 +13,7 @@
 
 # Introduction Pybuda
 
-PyBuda ™ is a compute framework used to develop, run, and analyze ML workloads on Tenstorrent hardware.
+PyBuda is a compute framework used to develop, run, and analyze ML workloads on Tenstorrent hardware.
 
 
 Moving forward, we plan to test various AI models using TT-Buda to evaluate its capabilities and  on Tenstorrent hardware.
@@ -62,29 +64,50 @@ sudo -E python3 setup_hugepages.py enable && sudo -E python3 setup_hugepages.py 
 ---
 
 
-### 
 ## PCI Driver Installation ( Tenstorrent AI Kernel-Mode Driver )
 
 **Supported Hardware:**
 
-- [Introduction to PyBuda](#)
-- [Installation TT-BUDA](#)
+- Grayskull
+- Wormhole
+<br>
 
+**Install** ( You must have dkms installed. )
+driver will auto-load next boot
+  ```bash
+  dnf install dkms
+  reboot
+
+  lsmod |grep -i tens
+  tenstorrent            49152  0
+  ```
 <br>
 
 
-2. Run first setup script and Reboot
-   
+**Uninstall** ( You must have dkms installed. )
+  ```bash
+ sudo modprobe -r tenstorrent
+ sudo dkms remove tenstorrent/1.29 --all
+  ```
+<br>
+
+## Backend Compiler Dependencies
+
+Instructions to install the Tenstorrent backend compiler dependencies on a fresh install of Ubuntu Server 20.04 or Ubuntu Server 22.04.
+
+For both operating systems run the following commands:
+
 ```bash
-sudo -E python3 setup_hugepages.py first_pass
-reboot
+apt update -y
+apt upgrade -y --no-install-recommends
+apt install -y build-essential curl libboost-all-dev libgl1-mesa-glx libgoogle-glog-dev libhdf5-serial-dev ruby software-properties-common libzmq3-dev clang wget python3-pip python-is-python3 python3-venv
 ```
 <br>
 
 
- 3. Run second setup script & check setup.
-   
-```bash
-sudo -E python3 setup_hugepages.py enable && sudo -E python3 setup_hugepages.py check
-```
+## PyBuda Installation
+
+It is strongly recommended to use virtual environments for each project utilizing PyBuda and Python dependencies.
+
+
 
