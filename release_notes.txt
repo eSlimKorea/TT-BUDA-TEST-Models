@@ -1,0 +1,41 @@
+## Summary
+Changelog for Release **v0.19.3** (notable changes since v0.18.2).
+
+#### Generality
+- Implemented support for `10` additional model variants, including `3` new architectures:
+  - `Phi2`
+  - `Qwen1.5-0.5B`
+  - `YOLOX`
+
+#### Performance
+##### Grayskull (e75, e150)
+- Enhanced performance observed on e75 include HRNet (41%)
+- Notable performance regressions on e150 include OpenPose (-16%)
+
+##### Wormhole (n150)
+- Performance restored on Whisper, Stable Diffusion
+
+##### Wormhole (n300)
+- Generative AI models not supported on n300 (dual-chip)
+- Enhanced performance observed on n300 (dual-chip) of 8% average
+- Enhanced performance observed on n300 (single-chip) include Falcon-7B (14%)
+- Notable performance regressions on n300 (single-chip) include FLAN-T5 (-20%), U-Net (-14%)
+- Accuracy regressions on n300 (dual-chip) include YOLOv5, OpenPose, U-Net
+
+##### Multicard Systems (TT-LoudBox / TT-QuietBox)
+- Enabled support for CNN models on 4-chip MMIO and 8-chip configurations
+- Generative AI models not supported
+
+#### General (Improvements/Features/Etc.)
+- Introduced functionality for Wormhole n300 (dual-chip), including the TT-LoudBox and TT-QuietBox configurations
+- Across-the-board bug fixes and enhancements to compiler stability 
+- Enhanced customer-facing documentation for improved clarity and accessibility
+
+#### Known issues
+- N/A
+
+## Compatibility matrix
+| OS | Python | PyTorch | Driver | Firmware |
+|--|--|--|--|--|
+| Ubuntu 22.04 | 3.10.12 | 2.1.0+cpu.cxx11.abi | ttkmd_1.29 | fw_v80.10.0.0 |
+| Ubuntu 20.04 | 3.8.10  | 2.1.0+cpu.cxx11.abi | ttkmd_1.29 | fw_v80.10.0.0 |
