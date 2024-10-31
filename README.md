@@ -120,6 +120,7 @@ rm libyaml-cpp-dev_0.6.2-4ubuntu1_amd64.deb libyaml-cpp0.6_0.6.2-4ubuntu1_amd64.
 ```
 <br>
 
+---
 
 
 ## PyBuda Installation
@@ -169,6 +170,22 @@ pip install --upgrade pip==24.0
 pip install pybuda-<version>.whl tvm-<version>.whl torchvision-<version>.whl
 ```
 
+ex..
+```bash
+pip install packages/pybuda-0.1.240917+dev.wh.b0.12bb84b-cp38-cp38-linux_x86_64.whl packages/tvm-0.14.0+dev.tt.0840d6bef-cp38-cp38-linux_x86_64.whl packages/torchvision-0.16.0+fbb4cc5-cp38-cp38-linux_x86_64.whl
+```
+<br>
+> [!NOTE]
+> The pybuda-<version>.whl file contains the PyBuda library, the tvm-<version>.whl file contains the latest TVM downloaded release, and the torchvision-<version>.whl file bundles the torchvision library.
+<br>
+
+Install Debuda (Optional)
+
+```bash
+pip install debuda-<version>.whl
+```
+  
+<br>
 
 
 
