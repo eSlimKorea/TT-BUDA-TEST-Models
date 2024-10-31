@@ -6,7 +6,6 @@
   - Backend Compiler Dependencies
   - PyBuda Installation
 - **Test**
-- [Test Models](#build)
 
 
 
