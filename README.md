@@ -104,10 +104,72 @@ apt install -y build-essential curl libboost-all-dev libgl1-mesa-glx libgoogle-g
 ```
 <br>
 
+for Ubuntu 20.04:
+
+```bash
+apt install -y libyaml-cpp-dev
+```
+
+for ubuntu 22.04:
+
+```bash
+wget http://mirrors.kernel.org/ubuntu/pool/main/y/yaml-cpp/libyaml-cpp-dev_0.6.2-4ubuntu1_amd64.deb
+wget http://mirrors.kernel.org/ubuntu/pool/main/y/yaml-cpp/libyaml-cpp0.6_0.6.2-4ubuntu1_amd64.deb
+dpkg -i libyaml-cpp-dev_0.6.2-4ubuntu1_amd64.deb libyaml-cpp0.6_0.6.2-4ubuntu1_amd64.deb
+rm libyaml-cpp-dev_0.6.2-4ubuntu1_amd64.deb libyaml-cpp0.6_0.6.2-4ubuntu1_amd64.deb
+```
+<br>
+
+
 
 ## PyBuda Installation
 
-It is strongly recommended to use virtual environments for each project utilizing PyBuda and Python dependencies.
+**It is strongly recommended to use virtual environments for each project utilizing PyBuda and Python dependencies.**
+
+### 1. Download .zip package and unzip to find the pybuda, tvm and torchvison wheel files
+
+
+- **Grayskull && Ubuntu 20.04 LTS (Focal Fossa)**
+  
+  ```bash
+  wget https://github.com/tenstorrent/tt-buda/releases/download/v0.19.3/pybuda-gs-v0.19.3-ubuntu-20-04-amd64-python3.8.zip
+  ```
+
+- **Wormhole && Ubuntu 20.04 LTS (Focal Fossa)**
+  
+  ```bash
+  wget https://github.com/tenstorrent/tt-buda/releases/download/v0.19.3/pybuda-wh.b0-v0.19.3-ubuntu-20-04-amd64-python3.8.zip
+  ```
+
+- **Grayskull && Ubuntu 22.04 LTS (Focal Fossa)**
+  
+  ```bash
+  wget https://github.com/tenstorrent/tt-buda/releases/download/v0.19.3/pybuda-gs-v0.19.3-ubuntu-22-04-amd64-python3.10.zip
+  ```
+
+- **Wormhole && Ubuntu 22.04 LTS (Focal Fossa)**
+  
+  ```bash
+  wget https://github.com/tenstorrent/tt-buda/releases/download/v0.19.3/pybuda-wh.b0-v0.19.3-ubuntu-22-04-amd64-python3.10.zip
+  ```
+<br>
+
+### 2. Create your Python environment in desired directory and Activate environment
+
+```bash
+python3 -m venv env   ( env is example )
+source env/bin/activate
+```
+<br>
+
+### 3. Pip install PyBuda, TVM and Torchvision whl files
+
+```bash
+pip install --upgrade pip==24.0
+pip install pybuda-<version>.whl tvm-<version>.whl torchvision-<version>.whl
+```
+
+
 
 
 
