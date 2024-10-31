@@ -91,6 +91,8 @@ driver will auto-load next boot
   ```
 <br>
 
+---
+
 ## Backend Compiler Dependencies
 
 Instructions to install the Tenstorrent backend compiler dependencies on a fresh install of Ubuntu Server 20.04 or Ubuntu Server 22.04.
@@ -175,8 +177,10 @@ ex..
 pip install packages/pybuda-0.1.240917+dev.wh.b0.12bb84b-cp38-cp38-linux_x86_64.whl packages/tvm-0.14.0+dev.tt.0840d6bef-cp38-cp38-linux_x86_64.whl packages/torchvision-0.16.0+fbb4cc5-cp38-cp38-linux_x86_64.whl
 ```
 <br>
+
 > [!NOTE]
 > The pybuda-<version>.whl file contains the PyBuda library, the tvm-<version>.whl file contains the latest TVM downloaded release, and the torchvision-<version>.whl file bundles the torchvision library.
+
 <br>
 
 Install Debuda (Optional)
